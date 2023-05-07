@@ -12,6 +12,7 @@ headerStyle.borderBottomWidth = "3px";
 headerStyle.borderBottomColor = "#C0C0C0";
 let logo = document.createElement("img");
 logo.src = "./images/logo.png";
+logo.alt = "LOGO";
 logo.style.height = "70px";
 header.append(logo);
 document.body.append(header)
@@ -208,6 +209,7 @@ for (const iterator of boxesdata) {
   imagebox.style.backgroundImage = "url('./images/image_frame.png')";
   let image = document.createElement("img");
   image.src = iterator.image;
+  image.alt = "FOTO";
   image.style.width = "238px"
   image.style.height = "88px";
   image.style.margin = "20px 0 0 25px";
