@@ -3,10 +3,10 @@ document.body.style.width = "100%";
 let header = document.createElement("header");
 let headerStyle = header.style;
 headerStyle.backgroundColor = "#f1f1f1";
-headerStyle.paddingLeft = "200px";
+headerStyle.paddingLeft = "100px";
 headerStyle.paddingTop = "10px";
 headerStyle.paddingBottom = "10px";
-headerStyle.width = "100%-200px";
+headerStyle.width = "100%-100px";
 headerStyle.borderBottomStyle = "solid";
 headerStyle.borderBottomWidth = "3px";
 headerStyle.borderBottomColor = "#C0C0C0";
@@ -20,10 +20,10 @@ document.body.append(header)
 // Nav menu
 let nav = document.createElement("nav");
 let navStyle = nav.style;
-navStyle.width = "100%-400px";
+navStyle.width = "100%-200px";
 navStyle.backgroundColor = "#EBCF51"
-navStyle.paddingLeft = "200px";
-navStyle.paddingRight = "200px";
+navStyle.paddingLeft = "100px";
+navStyle.paddingRight = "100px";
 let navbar = document.createElement("div")
 navbar.className = "navbar";
 navbar.style.display = "flex";
@@ -97,11 +97,9 @@ document.body.append(nav)
 
 let main = document.createElement("main");
 let mainStyle = main.style;
-mainStyle.width = "100%-400px";
+mainStyle.width = "100%-200px";
 mainStyle.backgroundColor = "#f1f1f1";
-mainStyle.paddingLeft = "200px";
-mainStyle.paddingRight = "200px";
-mainStyle.paddingTop = "50px";
+mainStyle.padding = "50px 100px";
 let contentbox = document.createElement("div");
 contentbox.style.paddingBottom = "30px";
 contentbox.style.borderBottom = "3px";
@@ -159,6 +157,111 @@ a.style.width = "90px";
 a.style.margin = "0  0  0 auto";
 a.style.paddingLeft = "48px";
 contentbox.append(a);
-
 main.append(contentbox)
+
+let boxesdata =[
+  {image:"./images/image_01.png",
+   title: "Lorem ipsum dolor sit amet",
+   content:"Quisque nec nisl. Nam scelerisque cursus dolor. Integer vel sapien quis risus egestas suscipit."},
+   {image:"./images/image_02.png",
+   title: "Curabitur quis velit quis tortor",
+   content:"Vivamus vulputate felis. Etiam luctus. Quisque facilisis suscipit elit. Curabitur eleifend congue leo.."},
+   {image:"./images/image_03.png",
+   title: "Quisque at ante sit amet erat",
+   content:"Maecenas nisl ante, mollis et, tincidunt vitae, feugiat sit amet, mi. Vestibulum urna."},
+   {image:"./images/image_04.png",
+   title: "Mauris vestibulum felis eget tortor",
+   content:"Sed pretium, neque hendrerit rhoncus accumsan, nibh tellus pharetra neque, quis rutrum elit justo vitae sapien."},
+   {image:"./images/image_05.png",
+   title: "Vestibulum auctor odio eget ante",
+   content:"Aliquam erat arcu, euismod et, dignissim in, interdum ac, est. Mauris congue felis at nisi. Donec felis."},
+   {image:"./images/image_06.png",
+   title: "Duis vitae velit sed dui",
+   content:"Proin vulputate justo et quam. Cras nisl eros, elementum eu, iaculis vitae, viverra ut, ligula."},
+  ]
+
+ title = document.createElement("h2");
+  title.innerHTML = "Mega Development Projects";
+ title.style.color = "#746522"
+ title.style.fontSize = "30px";
+ title.style.fontWeight = "normal";
+ title.style.fontFamily = "Tahoma, Geneva, sans-serif";
+ title.style.padding = "5px";
+ title.style.margin = "30px 0 20px";
+//  title.style.marginTop = "30px";
+main.append(title)
+let boxcollection = document.createElement("div");
+boxcollection.style.display = "flex";
+boxcollection.style.width= "100%";
+boxcollection.style.justifyContent = "space-between";
+boxcollection.style.alignContent = "space-between";
+boxcollection.style.flexWrap = "wrap";
+
+
+for (const iterator of boxesdata) {
+  let box =  document.createElement("div");
+  box.style.width= "280px";
+  let imagebox = document.createElement("div");
+  imagebox.style.width = "280px";
+  imagebox.style.height = "128px";
+  imagebox.style.margin = "20px 0 0 25px";
+  imagebox.style.backgroundImage = "url('./images/image_frame.png')";
+  let image = document.createElement("img");
+  image.src = iterator.image;
+  image.style.width = "238px"
+  image.style.height = "88px";
+  image.style.margin = "20px 0 0 25px";
+  imagebox.append(image)
+  box.append(imagebox)
+let imgtitle = document.createElement("a");
+imgtitle.innerHTML = iterator.title;
+imgtitle.href = "#";
+imgtitle.style.color = "#b6980d";
+imgtitle.style.textDecoration = "none";
+imgtitle.style.fontSize = "14px";  
+imgtitle.style.fontStyle = "italic";  
+imgtitle.style.fontWeight = "400";
+imgtitle.style.fontFamily= "Tahoma, Geneva, sans-serif";
+imgtitle.style.lineHeight = "33px"
+imgtitle.style.marginLeft = "40px"
+box.append(imgtitle)
+
+let imgcontent = document.createElement("p");
+imgcontent.innerHTML = iterator.content;
+imgcontent.style.fontSize = "13px";   
+imgcontent.style.fontWeight = "400";
+imgcontent.style.fontFamily= "Tahoma, Geneva, sans-serif";
+imgcontent.style.lineHeight = "1.7em"
+imgcontent.style.marginLeft = "40px"
+box.append(imgcontent) 
+  boxcollection.append(box)
+}
+
+main.append(boxcollection)
+
+ a = document.createElement("a");
+a.innerHTML = "View More";
+a.href = "#";
+a.style.color = "#fff";
+a.style.textDecoration = "none";
+a.style.fontSize = "14px";  
+a.style.fontWeight = "400";
+a.style.fontFamily= "Tahoma, Geneva, sans-serif";
+a.style.lineHeight = "33px"
+a.style.backgroundImage = "url('./images/readmore.png')";
+a.style.backgroundSize = "cover";
+a.style.backgroundPosition = "right";
+a.style.display = "block";
+a.style.height= "33px";
+a.style.width = "90px";
+a.style.margin = "30px  0  50px auto";
+a.style.paddingLeft = "48px";
+
+main.append(a);
+
+
+
+
+
+
 document.body.append(main)
